@@ -13,6 +13,14 @@ void processInput(GLFWwindow *window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
+	else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+		glClearColor(0.1f, 0.3f, 0.3f, 1.0f);
+	else if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+		glClearColor(0.2f, 0.4f, 0.3f, 1.0f);
+	else if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+		glClearColor(0.1f, 0.5f, 0.2f, 1.0f);
+	else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+		glClearColor(0.4f, 0.3f, 0.5f, 1.0f);
 }
 
 int main()
@@ -41,7 +49,6 @@ int main()
 		//Input
 		processInput(window);
 		//Render
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		// check and call events and swap the buffers
 		glfwPollEvents();
